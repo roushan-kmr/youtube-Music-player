@@ -100,6 +100,12 @@ Run Docker Compose to pull the image from GitHub and start the app:
 ```bash
 docker compose up -d
 ```
+### Step 4: For Machine already running older image, first download the latest image
+
+```bash
+docker pull ghcr.io/roushan-kmr/ytm-pi:latest
+docker compose up -d
+```
 
 ---
 
