@@ -1,0 +1,17 @@
+services:
+  yt-music:
+    build: .
+    container_name: ytm-pi
+    restart: unless-stopped
+    ports:
+      - "8001:8001"
+    volumes:
+      - ./YTMusic:/app/YTMusic
+    devices:
+      - /dev/snd:/dev/snd
+    group_add:
+      - audio
+    environment:
+      - YTM_PORT=8001
+      - YTM_DIR=/app/YTMusic
+      - MPV_AUDIO_DEVICE=alsa/default
